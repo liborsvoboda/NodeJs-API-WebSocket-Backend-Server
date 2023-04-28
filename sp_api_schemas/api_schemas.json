@@ -1,0 +1,3861 @@
+{
+  "hello": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "hello": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+
+
+
+  "auth": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        }
+      },
+      "required": [ "session" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "authStatus": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        }
+      },
+      "required": [ "session" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "isSmsVerified": {
+            "type": "boolean"
+          },
+          "isEmailVerified": {
+            "type": "boolean"
+          },
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "groupId": {
+            "type": "number"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "deadtimeExpiration": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "surName": {
+            "type": "string"
+          },
+          "imageName": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "userRating": {
+            "type": "number"
+          },
+          "profileRecommended": {
+            "type": "boolean"
+          },
+          "passwordResetRequired": {
+            "type": "boolean"
+          },
+          "banned": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "newPassword": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "confirmationEmail": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "email", "confirmationEmail", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "getAppSettings": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "appSettings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "paramName": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "phoneNumberAllowed": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "phoneNumber" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "emailVerify": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "confirmationEmail": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "email", "confirmationEmail", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "checkSmsCode": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "confirmationSms": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "confirmationSms", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "checkViberSmsCode": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "confirmationSms": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "confirmationSms", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "checkWhatsAppSmsCode": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "confirmationSms": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "confirmationSms", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+
+
+  "resetPassword": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        },
+        "confirmEmailRequest": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "email", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "emailVerifyRequest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        },
+        "confirmEmailRequest": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "email", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "smsVerifyRequest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "recaptcha", "telephone" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "smsViberVerifyRequest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        },
+        "viber": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "recaptcha", "viber" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "smsWhatsAppVerifyRequest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        },
+        "whatsApp": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid", "recaptcha", "whatsApp" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+
+  "getContributionType": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "contributions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getCurrency": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "currencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "maxPrice": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getTags": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "tag": {
+                  "type": "string"
+                },
+                "creator_uuid": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getPhoneCodes": {
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "shortCountry": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "setPayment": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "ownerUuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "price": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "ownerUuid", "contributionId", "price", "currency" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "getPayment": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "ownerUuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "ownerUuid", "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "payment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ownerUuid": {
+                  "type": "string"
+                },
+                "contributionId": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "payed": {
+                  "type": "boolean"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "checkout_url": {
+                  "type": "string"
+                },
+                "nonce": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "currency": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "getAcceptationById": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "contributionId", "candidateId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "acceptation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "price": {
+                  "type": "number"
+                },
+                "acceptationDatetime": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "platform": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "currency": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "onlineAddress": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "setRating": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "authorUuid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "authorUuid", "id", "candidateId", "rating", "type" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setContributionLike": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "uuid", "id" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "like": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setUserLike": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "authorUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "authorUuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "like": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setShownAcceptation": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "authorUuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "authorUuid", "contributionId", "candidateId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "reportProblemUser": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "reportedUuid": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "uuid", "reportedUuid", "reason" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setInterest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "interestDatetime": {
+          "type": "string"
+        },
+        "deleteId": {
+          "type": "number"
+        },
+        "price": {
+          "type": "number"
+        },
+        "streetAcp": {
+          "type": "string"
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "gpsLocation": {
+          "type": "string"
+        },
+        "author_uuid": {
+          "type": "string"
+        },
+        "accepted": {
+          "type": "boolean"
+        },
+        "reserved": {
+          "type": "boolean"
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "contributionId", "interestDatetime", "author_uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          },
+          "candidateId": {
+            "type": "number"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "setAcceptation": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "accepted": {
+          "type": "boolean"
+        },
+        "rejected": {
+          "type": "boolean"
+        },
+        "pending": {
+          "type": "boolean"
+        },
+        "price": {
+          "type": "number"
+        },
+        "changed": {
+          "type": "boolean"
+        },
+        "acceptationDatetime": {
+          "type": "string"
+        },
+        "streetAcp": {
+          "type": "string"
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "gpsLocation": {
+          "type": "string"
+        },
+        "moveCanceled": {
+          "type": "boolean"
+        },
+        "fieldsChanged": {
+          "type": "string"
+        },
+        "reserved": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid", "contributionId", "candidateId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setComment": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "candidateId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "uuid", "id", "comment", "candidateId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setFilter": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "filterGroupId": {
+          "type": "number"
+        },
+        "filterValue": {
+          "type": "string"
+        },
+        "filterType": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "filterType" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          },
+          "filterGroupId": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "setHideInterest": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "hideForAuthor": {
+          "type": "boolean"
+        },
+        "hideForCandidate": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid", "contributionId", "candidateId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+
+
+  "getContributions": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "callerUuid": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "full": {
+          "type": "boolean"
+        },
+        "myInterest": {
+          "type": "boolean"
+        },
+        "countNo": {
+          "type": "number"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "contrType": {
+          "type": "number"
+        },
+        "priceFrom": {
+          "type": "number"
+        },
+        "priceTo": {
+          "type": "number"
+        },
+        "timeFrom": {
+          "type": "string"
+        },
+        "timeTo": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "datedContributions": {
+          "type": "boolean"
+        },
+        "currency": {
+          "type": "number"
+        },
+        "fullTextFilter": {
+          "type": "string"
+        },
+        "filterType": {
+          "type": "string"
+        },
+        "getUnpublished": {
+          "type": "boolean"
+        },
+        "locationRange": {
+          "type": "string"
+        },
+        "priceFree": {
+          "type": "boolean"
+        },
+        "withActionDateOnly": {
+          "type": "boolean"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "orderBySec": {
+          "type": "string"
+        },
+        "onlyWithDirectContact": {
+          "type": "boolean"
+        },
+        "actual": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid", "full", "myInterest", "countNo", "pageNo", "filterType" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "contributions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "durations": {
+                  "type": "string"
+                },
+                "capacityFrom": {
+                  "type": "number"
+                },
+                "capacityTo": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "number"
+                },
+                "likeCount": {
+                  "type": "number"
+                },
+                "ownLike": {
+                  "type": "boolean"
+                },
+                "tags": {
+                  "type": "string"
+                },
+                "comments": {
+                  "type": "string"
+                },
+                "profileImage": {
+                  "type": "string"
+                },
+                "userRating": {
+                  "type": "number"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "ownRating": {
+                  "type": "boolean"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "actionDatetime": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "priceFree": {
+                  "type": "boolean"
+                },
+                "priceOwner": {
+                  "type": "boolean"
+                },
+                "isPublished": {
+                  "type": "boolean"
+                },
+                "isInsertPayed": {
+                  "type": "boolean"
+                },
+                "interests": {
+                  "type": "string"
+                },
+                "acceptations": {
+                  "type": "string"
+                },
+                "videoUrl": {
+                  "type": "string"
+                },
+                "primaryAttachment": {
+                  "type": "string"
+                },
+                "distance": {
+                  "type": "number"
+                },
+                "attachments": {
+                  "type": "string"
+                },
+                "commentsCount": {
+                  "type": "number"
+                },
+                "interestCount": {
+                  "type": "number"
+                },
+                "acceptationCount": {
+                  "type": "number"
+                },
+                "platform": {
+                  "type": "string"
+                },
+                "skype": {
+                  "type": "string"
+                },
+                "viber": {
+                  "type": "string"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "hangouts": {
+                  "type": "string"
+                },
+                "whatsApp": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "priceNote": {
+                  "type": "string"
+                },
+                "onlineAddress": {
+                  "type": "string"
+                },
+                "privateAddress": {
+                  "type": "boolean"
+                },
+                "chatExists": {
+                  "type": "boolean"
+                },
+                "facebookContact": {
+                  "type": "string"
+                },
+                "banned": {
+                  "type": "boolean"
+                },
+                "deletedByAdmin": {
+                  "type": "boolean"
+                },
+                "editedByAdmin": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getContribById": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "capacityFrom": {
+                  "type": "number"
+                },
+                "capacityTo": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "number"
+                },
+                "actionDatetime": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "priceFree": {
+                  "type": "boolean"
+                },
+                "priceOwner": {
+                  "type": "boolean"
+                },
+                "isPublished": {
+                  "type": "boolean"
+                },
+                "insertPaymentRequired": {
+                  "type": "boolean"
+                },
+                "insertPaymentPrice": {
+                  "type": "number"
+                },
+                "videoUrl": {
+                  "type": "string"
+                },
+                "distance": {
+                  "type": "number"
+                },
+                "platform": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getById": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "contributionId": {
+          "type": "number"
+        }
+      },
+      "required": [ "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "capacityFrom": {
+                  "type": "number"
+                },
+                "capacityTo": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "number"
+                },
+                "actionDatetime": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "priceFree": {
+                  "type": "boolean"
+                },
+                "privateAddress": {
+                  "type": "boolean"
+                },
+                "priceOwner": {
+                  "type": "boolean"
+                },
+                "isPublished": {
+                  "type": "boolean"
+                },
+                "insertPaymentRequired": {
+                  "type": "boolean"
+                },
+                "insertPaymentPrice": {
+                  "type": "number"
+                },
+                "videoUrl": {
+                  "type": "string"
+                },
+                "distance": {
+                  "type": "number"
+                },
+                "platform": {
+                  "type": "string"
+                },
+                "authorName": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "string"
+                },
+                "primaryAttachment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "setBan": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "isBanned": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid", "isBanned" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+
+
+  "getAcceptations": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "acceptations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "authorUuid": {
+                  "type": "string"
+                },
+                "candidateId": {
+                  "type": "number"
+                },
+                "contributionId": {
+                  "type": "number"
+                },
+                "candidateUuid": {
+                  "type": "string"
+                },
+                "accepted": {
+                  "type": "boolean"
+                },
+                "rejected": {
+                  "type": "boolean"
+                },
+                "pending": {
+                  "type": "boolean"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "fieldsChanged": {
+                  "type": "string"
+                },
+                "acceptationDatetime": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "reserved": {
+                  "type": "boolean"
+                },
+                "candidateImage": {
+                  "type": "string"
+                },
+                "platform": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getFilters": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "filter_group_id": {
+                  "type": "number"
+                },
+                "filter_value": {
+                  "type": "string"
+                },
+                "filterType": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "setAttachments": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "primaryAttachment": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "name", "mimeType", "content" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "removeAttachment": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "id": {
+          "type": "number"
+        },
+        "primaryAttachment": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "removeContribution": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "contributionId" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "getAttachments": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        }
+      },
+      "required": [ "id" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "getNotifications": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "countNo": {
+          "type": "number"
+        },
+        "pageNo": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "uuid", "countNo", "pageNo" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "notifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "owner_uuid": {
+                  "type": "string"
+                },
+                "notificationType": {
+                  "type": "string"
+                },
+                "contributionId": {
+                  "type": "number"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "target_uuid": {
+                  "type": "string"
+                },
+                "shown": {
+                  "type": "boolean"
+                },
+                "created": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "setContributions": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "number"
+        },
+        "content": {
+          "type": "string"
+        },
+        "durations": {
+          "type": "string"
+        },
+        "capacityFrom": {
+          "type": "number"
+        },
+        "capacityTo": {
+          "type": "number"
+        },
+        "price": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "number"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "actionDatetime": {
+          "type": "string"
+        },
+        "gpsLocation": {
+          "type": "string"
+        },
+        "streetAcp": {
+          "type": "string"
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "priceFree": {
+          "type": "boolean"
+        },
+        "priceOwner": {
+          "type": "boolean"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "insertPaymentRequired": {
+          "type": "boolean"
+        },
+        "insertPaymentPrice ": {
+          "type": "number"
+        },
+        "videoUrl": {
+          "type": "string"
+        },
+        "distance": {
+          "type": "number"
+        },
+        "moveContribId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "privateAddress": {
+          "type": "boolean"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "facebookContact": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "title", "type", "content", "price", "currency", "tags" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "getFavorites": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "callerUuid": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "countNo": {
+          "type": "number"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "contrType": {
+          "type": "number"
+        },
+        "priceFrom": {
+          "type": "number"
+        },
+        "priceTo": {
+          "type": "number"
+        },
+        "timeFrom": {
+          "type": "string"
+        },
+        "timeTo": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "orderBy": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "number"
+        },
+        "fullTextFilter": {
+          "type": "string"
+        },
+        "filterType": {
+          "type": "string"
+        },
+        "locationRange": {
+          "type": "string"
+        },
+        "priceFree": {
+          "type": "boolean"
+        },
+        "withActionDateOnly": {
+          "type": "boolean"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "orderBySec": {
+          "type": "string"
+        },
+        "onlyWithDirectContact": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid", "countNo", "pageNo", "filterType" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "contributions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "durations": {
+                  "type": "string"
+                },
+                "capacityFrom": {
+                  "type": "number"
+                },
+                "capacityTo": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "number"
+                },
+                "likeCount": {
+                  "type": "number"
+                },
+                "ownLike": {
+                  "type": "number"
+                },
+                "tags": {
+                  "type": "string"
+                },
+                "comments": {
+                  "type": "string"
+                },
+                "profileImage": {
+                  "type": "string"
+                },
+                "userRating": {
+                  "type": "number"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "ownRating": {
+                  "type": "boolean"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "actionDatetime": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "priceFree": {
+                  "type": "boolean"
+                },
+                "priceOwner": {
+                  "type": "boolean"
+                },
+                "isPublished": {
+                  "type": "boolean"
+                },
+                "isInsertPayed": {
+                  "type": "boolean"
+                },
+                "acceptations": {
+                  "type": "string"
+                },
+                "videoUrl": {
+                  "type": "string"
+                },
+                "primaryAttachment": {
+                  "type": "string"
+                },
+                "distance ": {
+                  "type": "number"
+                },
+                "attachments": {
+                  "type": "string"
+                },
+                "interests": {
+                  "type": "string"
+                },
+                "commentsCount": {
+                  "type": "number"
+                },
+                "interestCount": {
+                  "type": "number"
+                },
+                "acceptationCount": {
+                  "type": "number"
+                },
+                "platform": {
+                  "type": "string"
+                },
+                "skype": {
+                  "type": "string"
+                },
+                "viber": {
+                  "type": "string"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "hangouts": {
+                  "type": "string"
+                },
+                "whatsApp": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "priceNote": {
+                  "type": "string"
+                },
+                "onlineAddress": {
+                  "type": "string"
+                },
+                "privateAddress": {
+                  "type": "boolean"
+                },
+                "chatExists": {
+                  "type": "boolean"
+                },
+                "facebookContact": {
+                  "type": "string"
+                },
+                "banned": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getMyAcceptations": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "acceptations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "acceptationDatetime": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "durations": {
+                  "type": "string"
+                },
+                "sourceRec": {
+                  "type": "string"
+                },
+                "platform": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getAuthorInterestsTimes": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "acceptations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "acceptationDatetime": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "number"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "durations": {
+                  "type": "string"
+                },
+                "sourceRec": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "getUserProfile": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "myUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "surName": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "telephone": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "dic": {
+                  "type": "string"
+                },
+                "ico": {
+                  "type": "string"
+                },
+                "regEmail": {
+                  "type": "string"
+                },
+                "isGdprConfirmed": {
+                  "type": "boolean"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "birthDate": {
+                  "type": "string"
+                },
+                "sex": {
+                  "type": "string"
+                },
+                "profileImage": {
+                  "type": "string"
+                },
+                "memoNote": {
+                  "type": "string"
+                },
+                "privateAddress": {
+                  "type": "boolean"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "skype": {
+                  "type": "string"
+                },
+                "skypeDirect": {
+                  "type": "boolean"
+                },
+                "viber": {
+                  "type": "string"
+                },
+                "viberDirect": {
+                  "type": "boolean"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "facebookDirect": {
+                  "type": "boolean"
+                },
+                "hangouts": {
+                  "type": "string"
+                },
+                "hangoutsDirect": {
+                  "type": "boolean"
+                },
+                "whatsApp": {
+                  "type": "string"
+                },
+                "whatsAppDirect": {
+                  "type": "boolean"
+                },
+                "emailDirect": {
+                  "type": "boolean"
+                },
+                "phoneDirect": {
+                  "type": "boolean"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "linkDirect": {
+                  "type": "boolean"
+                },
+                "onlineAddress": {
+                  "type": "string"
+                },
+                "onlineAddressDirect": {
+                  "type": "boolean"
+                },
+                "isSmsVerified": {
+                  "type": "boolean"
+                },
+                "isEmailVerified": {
+                  "type": "boolean"
+                },
+                "isViberVerified": {
+                  "type": "boolean"
+                },
+                "isWhatsAppVerified": {
+                  "type": "boolean"
+                },
+                "passwordResetRequired": {
+                  "type": "boolean"
+                },
+                "banned": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getFavoriteUsers": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "favorites": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "surName": {
+                  "type": "string"
+                },
+                "profileImage": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+
+  "getUser": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "myUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "surName": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "dic": {
+                  "type": "string"
+                },
+                "ico": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "profileImage": {
+                  "type": "string"
+                },
+                "memoNote": {
+                  "type": "string"
+                },
+                "userLiked": {
+                  "type": "boolean"
+                },
+                "banned": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updateUserProfile": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "surName": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postCode": {
+            "type": "string"
+          },
+          "streetAcp": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "dic": {
+            "type": "string"
+          },
+          "ico": {
+            "type": "string"
+          },
+          "regComplete": {
+            "type": "boolean"
+          },
+          "regEmail": {
+            "type": "string"
+          },
+          "isGdprConfirmed": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string"
+          },
+          "sex": {
+            "type": "string"
+          },
+          "memoNote": {
+            "type": "string"
+          },
+          "privateAddress": {
+            "type": "boolean"
+          },
+          "gpsLocation": {
+            "type": "string"
+          },
+          "skype": {
+            "type": "string"
+          },
+          "skypeDirect": {
+            "type": "boolean"
+          },
+          "viber": {
+            "type": "string"
+          },
+          "viberDirect": {
+            "type": "boolean"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "facebookDirect": {
+            "type": "boolean"
+          },
+          "hangouts": {
+            "type": "string"
+          },
+          "hangoutsDirect": {
+            "type": "boolean"
+          },
+          "whatsApp": {
+            "type": "string"
+          },
+          "whatsAppDirect": {
+            "type": "boolean"
+          },
+          "emailDirect": {
+            "type": "boolean"
+          },
+          "phoneDirect": {
+            "type": "boolean"
+          },
+          "link": {
+            "type": "string"
+          },
+          "linkDirect": {
+            "type": "boolean"
+          },
+          "onlineAddress": {
+            "type": "string"
+          },
+          "onlineAddressDirect": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "getUsers": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "number"
+        },
+        "filter": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "filter" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "surName": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "streetAcp": {
+                  "type": "string"
+                },
+                "telephone": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "dic": {
+                  "type": "string"
+                },
+                "ico": {
+                  "type": "string"
+                },
+                "regComplete": {
+                  "type": "boolean"
+                },
+                "regEmail": {
+                  "type": "string"
+                },
+                "registerDate": {
+                  "type": "string"
+                },
+                "groupId": {
+                  "type": "number"
+                },
+                "isAdmin": {
+                  "type": "boolean"
+                },
+                "isgdprconfirmed": {
+                  "type": "boolean"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "birthDate": {
+                  "type": "string"
+                },
+                "sex": {
+                  "type": "string"
+                },
+                "isSmsVerified": {
+                  "type": "boolean"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "isGdprConfirmed": {
+                  "type": "boolean"
+                },
+                "memoNote": {
+                  "type": "string"
+                },
+                "privateAddress": {
+                  "type": "string"
+                },
+                "gpsLocation": {
+                  "type": "string"
+                },
+                "skype": {
+                  "type": "string"
+                },
+                "skypeDirect": {
+                  "type": "boolean"
+                },
+                "viber": {
+                  "type": "string"
+                },
+                "viberDirect": {
+                  "type": "boolean"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "facebookDirect": {
+                  "type": "boolean"
+                },
+                "hangouts": {
+                  "type": "string"
+                },
+                "hangoutsDirect": {
+                  "type": "boolean"
+                },
+                "whatsApp": {
+                  "type": "string"
+                },
+                "whatsAppDirect": {
+                  "type": "boolean"
+                },
+                "emailDirect": {
+                  "type": "boolean"
+                },
+                "phoneDirect": {
+                  "type": "boolean"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "linkDirect": {
+                  "type": "boolean"
+                },
+                "onlineAddress": {
+                  "type": "string"
+                },
+                "onlineAddressDirect": {
+                  "type": "boolean"
+                },
+                "isViberVerified": {
+                  "type": "boolean"
+                },
+                "isWhatsAppVerified": {
+                  "type": "boolean"
+                },
+                "profileRecommended": {
+                  "type": "boolean"
+                },
+                "passwordResetRequired": {
+                  "type": "boolean"
+                },
+                "banned": {
+                  "type": "boolean"
+                },
+                "reportExist": {
+                  "type": "number"
+                },
+                "contibutionsBannedCount": {
+                  "type": "number"
+                },
+                "chatWithAdmin": {
+                  "type": "number"
+                },
+                "contributionCount": {
+                  "type": "number"
+                },
+                "reportNotShownCount": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "updateUser": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "postCode": {
+          "type": "string"
+        },
+        "streetACP": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "dic": {
+          "type": "string"
+        },
+        "ico": {
+          "type": "string"
+        },
+        "regComplete": {
+          "type": "boolean"
+        },
+        "regEmail": {
+          "type": "string"
+        },
+        "invoicePeriod": {
+          "type": "string"
+        },
+        "nextPayDate": {
+          "type": "string"
+        },
+        "nextPayDate_ts": {
+          "type": "number"
+        },
+        "creditNextPayDate": {
+          "type": "string"
+        },
+        "creditNextPayDate_ts": {
+          "type": "number"
+        },
+        "paymentVersion": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "registerDate": {
+          "type": "string"
+        },
+        "trial": {
+          "type": "boolean"
+        },
+        "deadtimeExpiration": {
+          "type": "number"
+        },
+        "groupId": {
+          "type": "number"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "user": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "recaptcha": {
+          "type": "string"
+        }
+      },
+      "required": [ "email", "password", "recaptcha" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "session": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "surName": {
+            "type": "string"
+          },
+          "isSmsVerified": {
+            "type": "boolean"
+          },
+          "isEmailVerified": {
+            "type": "boolean"
+          },
+          "imageName": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "userRating": {
+            "type": "number"
+          },
+          "profileRecommended": {
+            "type": "boolean"
+          },
+          "passwordResetRequired": {
+            "type": "boolean"
+          },
+          "banned": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setShownReport": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "id" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "getProblemReport": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "reportedUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "reportedUuid" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "reportedUuid": {
+                  "type": "string"
+                },
+                "reporter": {
+                  "type": "string"
+                },
+                "problemUser": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string"
+                },
+                "contribution_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "shown": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+
+  "setAppSettings": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "paramName": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "recId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "paramName", "value" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "setAdvertisement": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "number"
+        },
+        "link": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "name", "mimeType", "content", "link", "sequence" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "getAdvertisement": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "orderBy": {
+          "type": "string"
+        }
+      },
+      "required": [ "orderBy" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "advertisements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "sequence": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "delete": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "what": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "uuid", "what", "id" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "webhooks": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "external_id": {
+          "type": "string"
+        },
+        "object": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        }
+      },
+      "required": [ "external_id", "object", "type", "data" ]
+    },
+    "response": {
+      "2xx": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "host": "", 
+  "port": 3000,
+  "ssl_key": "./letsencrypt/live/appi.kliknetezde.cz/privkey.pem", 
+  "ssl_cert": "./letsencrypt/live/appi.kliknetezde.cz/cert.pem", 
+  "reportEmail": "report@happytohelp.eu",
+  "db": {
+    "host": "localhost",
+    "type": "mysql",
+    "dbname": "",
+    "user": "",
+    "password": "",
+    "poolMin": 0,
+    "poolMax": 3,
+    "poolAcquire": 1000000,
+    "poolIdle": 10000
+  },
+  "smtp": {
+    "host": "smtp.happytohelp.eu",
+    "port": 25,
+    "secure": false,
+    "auth": {
+      "user": "",
+      "pass": ""
+    },
+    "rejectUnauthorized": false
+  },
+  "sms": {
+    "IntegrationId": "",
+    "IntegrationKey": "",
+    "apiUrl": "http://as.eurosms.com/api/v3/send/one",
+    "apiTestUrl": "http://as.eurosms.com/api/v3/test/one",
+    "sender": "HappyToHelp",
+    "flags": 4
+  },
+  "payGate": {
+    "authorizeUrl": "https://sandbox.payout.one/api/v1/authorize",
+    "paymentMethodsUrl": "https://sandbox.payout.one/api/v1/payment_methods",
+    "payUrl": "https://sandbox.payout.one/api/v1/checkouts",
+    "client_id": "",
+    "client_secret": ""
+  }
+}

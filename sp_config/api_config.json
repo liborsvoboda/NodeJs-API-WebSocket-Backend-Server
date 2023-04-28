@@ -1,0 +1,41 @@
+{
+  "server": {
+    "address": "devappi.happytohelp.eu",
+    "domain": "devappi.happytohelp.eu",
+    "port": 644,
+    "ssl": {
+      "key": "./letsencrypt/live/devappi.happytohelp.eu/privkey.pem",
+      "cert": "./letsencrypt/live/devappi.happytohelp.eu/fullchain.pem"
+    },
+    "db": {
+      "host": "127.0.0.1",
+      "type": "mysql",
+      "dbname": "",
+      "user": "",
+      "password": "",
+      "poolMin": 0,
+      "poolMax": 20,
+      "poolAcquire": 1000000,
+      "poolIdle": 10000,
+      "testUser": false,
+      "realtime": {
+        "user": "",
+        "password": "",
+        "charset": "utf8_general_ci",
+        "dateStrings": true,
+	      "serverId":2
+      }
+    },
+    "bcrypt": {
+      "rounds": 10
+    }
+  },
+  "recaptcha": {
+    "key": "",
+    "secret": ""
+  },
+  "recaptchaAndroid": {
+    "key": "",
+    "secret": ""
+  }
+}

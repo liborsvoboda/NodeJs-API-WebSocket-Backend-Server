@@ -1,0 +1,41 @@
+{
+  "server": {
+    "address": "0.0.0.0",
+    "domain": "",
+    "port": 444,
+    "ssl": {
+      "key": "./letsencrypt/live/appi.kliknetezde.cz/privkey.pem",
+      "cert": "./letsencrypt/live/appi.kliknetezde.cz/fullchain.pem"
+    },
+    "db": {
+      "host": "127.0.0.1",
+      "type": "mysql",
+      "dbname": "",
+      "user": "",
+      "password": "",
+      "poolMin": 0,
+      "poolMax": 20,
+      "poolAcquire": 1000000,
+      "poolIdle": 10000,
+      "testUser": false,
+      "realtime": {
+        "user": "",
+        "password": "",
+        "charset": "utf8_general_ci",
+        "dateStrings": true,
+        "serverId": 1
+      }
+    },
+    "bcrypt": {
+      "rounds": 10
+    }
+  },
+  "recaptcha": {
+    "key": "",
+    "secret": ""
+  },
+  "recaptchaAndroid": {
+    "key": "",
+    "secret": ""
+  }
+}

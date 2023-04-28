@@ -1,0 +1,158 @@
+{
+  "authStatus": {
+    "ok": {
+      "result": 1,
+      "code": "auth-ok",
+      "message": "User logged in"
+    }
+  },
+  "signup": {
+    "ok": {
+      "result": 1,
+      "code": "registration-success",
+      "message": "Successful registration"
+    },
+    "email": {
+      "result": 0,
+      "code": "existing-email-error",
+      "message": "This email address is already being used"
+    }
+  },
+  "login": {
+    "user": {
+      "result": 0,
+      "code": "not-exist-user-error",
+      "message": "User with this email does not exist"
+    },
+    "password": {
+      "result": 0,
+      "code": "incorrect-password-error",
+      "message": "Incorrect password"
+    },
+    "bcrypt": {
+      "result": 0,
+      "code": "password-validation-error",
+      "message": "Password validation error"
+    },
+    "cookies": {
+      "result": 0,
+      "code": "session-cookie-error",
+      "message": "Session cookie error"
+    }
+  },
+  "password": {
+    "error": {
+      "result": 0,
+      "code": "password-error",
+      "message": "Password must be at least 6 characters long"
+    },
+    "confirmation": {
+      "result": 0,
+      "code": "confirmation-error",
+      "message": "Incorrect confirmation code"
+    },
+    "smartemail": {
+      "result": 0,
+      "code": "send-email-error",
+      "message": "Email send failed"
+    },
+    "confirmed": {
+      "result": 1,
+      "code": "confirmation-ok",
+      "message": "Correct confirmation code"
+    },
+    "email": {
+      "result": 1,
+      "code": "password-email-ok",
+      "message": "Password email sent successfully"
+    },
+    "verify": {
+      "result": 1,
+      "code": "verify-email-sent",
+      "message": "Verify email sent successfully"
+    },
+    "notexist": {
+      "result": 1,
+      "code": "password-email-error",
+      "message": "Email address not exists"
+    },
+    "ok": {
+      "result": 1,
+      "code": "password-reset-ok",
+      "message": "Password reset successfully"
+    }
+  },
+  "captcha": {
+    "result": 0,
+    "code": "captcha-error",
+    "message": "Captcha error"
+  },
+  "auth": {
+    "result": 0,
+    "code": "auth-error",
+    "message": "You must log in first"
+  },
+  "db": {
+    "result": 0,
+    "code": "database-error",
+    "message": "Database error"
+  },
+  "expired": {
+    "result": 0,
+    "code": "expired-account-error",
+    "message": "Account is expired"
+  },
+  "logout": {
+    "result": 1,
+    "code": "logout-ok",
+    "message": "You has been logged out"
+  },
+  "update": {
+    "result": 1,
+    "code": "update-ok",
+    "message": "Update success"
+  },
+  "insert": {
+    "result": 1,
+    "code": "insert-ok",
+    "message": "Insert success"
+  },
+  "delete": {
+    "result": 1,
+    "code": "delete-ok",
+    "message": "Delete success"
+  },
+  "privileges": {
+    "result": 0,
+    "code": "privileges-error",
+    "message": "Not enough privileges"
+  },
+  "email": {
+    "result": 0,
+    "code": "email-error",
+    "message": "Email sending error, please try again"
+  },
+  "sms": {
+    "uuid": {
+      "result": 0,
+      "code": "sms-error",
+      "message": "sms sending error, uuid not exist"
+    },
+    "confirmation": {
+      "result": 0,
+      "code": "confirmation-error",
+      "message": "Incorrect confirmation code"
+    },
+    "sms": {
+      "result": 1,
+      "code": "sms-send-ok",
+      "message": "Sms sent successfully"
+    },
+    "confirmationOk": {
+      "result": 1,
+      "code": "sms-confirmed-ok",
+      "message": "confirmation code is ok"
+    }
+
+  }
+}

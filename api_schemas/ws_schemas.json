@@ -1,0 +1,838 @@
+{
+  "default": {
+    "type": "object",
+    "properties": {
+      "req": {
+        "type": "string"
+      },
+      "result": {
+        "type": "number"
+      },
+      "code": {
+        "type": "string"
+      },
+      "message": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      }
+    }
+  },
+  "setShown": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "created", "fromUuid" ]
+    }
+  },
+  "setChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "created": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "fromUuid", "forUuid", "content", "created" ]
+    }
+  },
+  "getChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "created": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid", "candidateId", "created" ]
+    }
+  },
+  "removeChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "created": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "fromUuid", "id", "candidateId", "created" ]
+    }
+  },
+  "setShownChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "candidateId": {
+          "type": "number"
+        },
+        "created": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid", "candidateId", "created" ]
+    }
+  },
+  "getAllChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "countNo": {
+          "type": "number"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "contributionId": {
+          "type": "number"
+        },
+        "candidateId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "forUuid", "countNo", "pageNo", "contributionId", "candidateId" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "recId": {
+          "type": "number"
+        },
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "fromUuid": {
+                "type": "string"
+              },
+              "forUuid": {
+                "type": "string"
+              },
+              "contributionId": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "candidateId": {
+                "type": "number"
+              },
+              "shown": {
+                "type": "boolean"
+              },
+              "created": {
+                "type": "string"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "rootCount": {
+                "type": "number"
+              },
+              "contributionType": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getChatGroups": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fromUuid": {
+                "type": "string"
+              },
+              "forUuid": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "notShown": {
+                "type": "number"
+              },
+              "contributionId": {
+                "type": "number"
+              },
+              "lastChatShown": {
+                "type": "number"
+              },
+              "contributionType": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getChatContribs": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid", "fromUuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fromUuid": {
+                "type": "string"
+              },
+              "forUuid": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "contributionId": {
+                "type": "number"
+              },
+              "notShown": {
+                "type": "number"
+              },
+              "contributionType": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getChatInterests": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        },
+        "contributionId": {
+          "type": "number"
+        }
+      },
+      "required": [ "session", "forUuid", "fromUuid", "contributionId" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "reqContrib": {
+          "type": "number"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fromUuid": {
+                "type": "string"
+              },
+              "forUuid": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "contributionId": {
+                "type": "number"
+              },
+              "candidateId": {
+                "type": "number"
+              },
+              "notShown": {
+                "type": "number"
+              },
+              "interestDatetime": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "streetAcp": {
+                "type": "string"
+              },
+              "postCode": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string"
+              },
+              "rootCount": {
+                "type": "number"
+              },
+              "contributionType": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "removeGroupChat": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid", "fromUuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "reqContrib": {
+          "type": "number"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "removed": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+
+  "getNotificationsGroups": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "owner_uuid": {
+                "type": "string"
+              },
+              "author_uuid": {
+                "type": "string"
+              },
+              "created": {
+                "type": "string"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "notShown": {
+                "type": "number"
+              },
+              "notificationType": {
+                "type": "string"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "contributionType": {
+                "type": "number"
+              },
+              "acceptationDatetime": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getChatCount": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "forUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "forUuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "removeNotification": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "created": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "id", "created", "fromUuid" ]
+    }
+  },
+  "getNotifications": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "created", "fromUuid" ]
+    }
+  },
+  "getNotificationsCount": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "getAllNotifications": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "countNo": {
+          "type": "number"
+        },
+        "pageNo": {
+          "type": "number"
+        },
+        "fromUuid": {
+          "type": "string"
+        }
+      },
+      "required": [ "session", "uuid", "countNo", "pageNo", "fromUuid" ]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "recId": {
+          "type": "number"
+        },
+        "reqName": {
+          "type": "string"
+        },
+        "req": {
+          "type": "string"
+        },
+        "result": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "owner_uuid": {
+                "type": "string"
+              },
+              "notificationType": {
+                "type": "string"
+              },
+              "contributionId": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "author_uuid": {
+                "type": "string"
+              },
+              "shown": {
+                "type": "boolean"
+              },
+              "created": {
+                "type": "string"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "authorName": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "acceptationDatetime": {
+                "type": "string"
+              },
+              "candidate_id": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string"
+              },
+              "streetAcp": {
+                "type": "string"
+              },
+              "postCode": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "gpsLocation": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "hideForAuthor": {
+                "type": "boolean"
+              },
+              "hideForCandidate": {
+                "type": "boolean"
+              },
+              "chatExists": {
+                "type": "boolean"
+              },
+              "contributionType": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

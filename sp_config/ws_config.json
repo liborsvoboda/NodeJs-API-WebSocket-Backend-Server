@@ -1,0 +1,18 @@
+{
+  "address": "devappi.happytohelp.eu",
+  "host": "devappi.happytohelp.eu",
+  "port": 3300,
+  "ssl_key": "./letsencrypt/live/devappi.happytohelp.eu/privkey.pem",
+  "ssl_cert": "./letsencrypt/live/devappi.happytohelp.eu/fullchain.pem",
+  "db": {
+    "host": "localhost",
+    "type": "mysql",
+    "dbname": "sp_HappyToHelp",
+    "user": "",
+    "password": "",
+    "poolMin": 0,
+    "poolMax": 30,
+    "poolAcquire": 1000000,
+    "poolIdle": 10000
+  }
+}
